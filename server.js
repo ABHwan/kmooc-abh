@@ -23,6 +23,6 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-http.createServer(app).listen(port, () => {
+http.createServer(app).listen(port, host, () => {
   console.log(`app listening at ${port}`);
 });
