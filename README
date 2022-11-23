@@ -1,1 +1,3 @@
 chrome://net-internals/#hsts
+
+node server.js &
