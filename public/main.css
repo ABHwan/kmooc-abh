@@ -1,0 +1,76 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 100%;
+}
+
+#app {
+  height: inherit;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: inherit;
+}
+
+.nav {
+  padding: 20px;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.nav ul {
+  padding: 20px;
+}
+
+.nav ul li {
+  line-height: 2;
+  list-style-type: none;  
+}
+
+.nav ul li:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contents {
+  padding: 40px;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.card-title {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 500;
+}
+table {
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  border-collapse: collapse;
+}
+table thead th {
+  padding: 5px;
+  width: auto;
+  border: 2px solid lightgray;
+}
+table tbody td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid lightgray;
+}
+
+.card-title > button {
+  height: 30px;
+  margin: 0 3px;
+}
