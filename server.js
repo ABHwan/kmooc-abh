@@ -4,6 +4,8 @@ const path = require("path");
 
 const app = express();
 
+const host = '43.201.20.139';
+
 const port = 22; //인스턴스 생성시 만들었던 포트번호 기입
 
 app.get("/ping", (req, res) => {
