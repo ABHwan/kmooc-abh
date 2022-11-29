@@ -1,8 +1,8 @@
 const http = require("http");
 const express = require("express");
 const path = require("path");
-
 const app = express();
+const booksRouter = require('./src/js/books.js')
 
 const port = 3000; //인스턴스 생성시 만들었던 포트번호 기입
 
@@ -10,6 +10,7 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
+app.use('/books', booksRouter)
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/*", (req, res) => {
