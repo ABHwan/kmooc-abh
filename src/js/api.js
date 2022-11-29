@@ -6,8 +6,8 @@ const navList = [
 		event: () => openApi()
 	},
 	{
-		text: 'Node',
-		event: () => node()
+		text: '도서관리 프로그램',
+		event: () => nodeApi()
 	}
 ]
 
@@ -120,7 +120,7 @@ let author = $('#author')
 let save = $('#save')
 let list = $('#list')
 
-function node() {
+function nodeApi() {
 	// alert('준비 중')
 	const contents = document.querySelector('.contents')
 
@@ -145,6 +145,8 @@ function node() {
 
 	saveButton.id = 'save'
 	saveButton.innerText = '저장'
+	saveButton.addEventListener('click', createBook)
+
 	titleInput.id = 'title'
 	authorInput.id = 'author'
 	ol.id = 'list'
@@ -166,15 +168,12 @@ function node() {
 
 	contents.innerHTML = ''
 	contents.appendChild(card)
-
-	saveButton.click(createBook)
+	
 	getBooks()
 }
 
-
-
-
 function getBooks() {
+	const list = $('#list')
   $.getJSON('/books')
   .done((books) => {
     list.empty()
@@ -193,6 +192,8 @@ function getBooks() {
 }
 
 function createBook() {
+	const title = $('#title')
+	const author = $('#author')
   $.ajax('/books', {
     type: 'POST',
     data: JSON.stringify({

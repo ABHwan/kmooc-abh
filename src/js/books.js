@@ -2,7 +2,11 @@ const express = require('express')
 const router = express.Router()
 
 const books = [];
-let id = 1;
+let id = 0;
+
+function getIncrementId() {
+  return id += 1
+}
 
 router.get('/', (req, res, next) => {
   res.send(books)
@@ -10,10 +14,10 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const book = req.body
-  book.id = id
+  book.id = getIncrementId()
 
+  console.log('book', book)
   books.push(req.body)
-  id += 1
   res.sendStatus(200)
 })
 
