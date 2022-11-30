@@ -2,9 +2,18 @@ const path = require('path');
 
 module.exports = {
   // The entry point file described above
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader'
+      }
+    ]
+  },
   entry: {
     main: './src/js/index.js',
     api: './src/js/api.js',
+    chat: './src/js/modules/chatScript.js'
   },
   // The location of the build folder described above
   output: {
